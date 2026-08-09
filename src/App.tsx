@@ -1,5 +1,7 @@
+import { Loader } from './shared/loader';
+
 function App() {
-  return <>start</>;
+  return <Loader />;
 }
 
 export default App;
