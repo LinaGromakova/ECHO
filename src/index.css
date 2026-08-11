@@ -1,7 +1,35 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-mint: #8cebdc;
+  --color-mint: oklch(87.289% 0.11567 160.742);
   --font-michroma: 'Michroma', sans-serif;
   --font-orbitron: 'Orbitron', sans-serif;
+  --color-yellow: #ffd300;
+}
+.cyber-grid-container {
+  background-color: #09090b;
+  background-image:
+    linear-gradient(rgba(255, 211, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 211, 0, 0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.container-shadow::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  background: radial-gradient(
+    circle at center,
+    transparent 90%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+}
+.container-shadow::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  box-shadow: inset 0 0 150px rgba(0, 0, 0, 1);
 }

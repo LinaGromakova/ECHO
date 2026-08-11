@@ -1,4 +1,4 @@
-import { Loader } from './shared/loader';
+import { Loader } from './shared/ui';
 
 function App() {
   return <Loader />;
