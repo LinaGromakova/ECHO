@@ -1,7 +1,7 @@
-import { MatrixRain } from '../lib/MatrixRain';
+import { MatrixRain } from './lib/MatrixRain';
 
+const STEPS = Array(5).fill(1);
 export const MatrixWindow = () => {
-  const STEPS = Array(5).fill(1);
   return (
     <div
       className='bg-black w-1/5 h-55 absolute 
@@ -11,14 +11,12 @@ export const MatrixWindow = () => {
       <div className='absolute w-1/4 h-3 -top-1.5 left-[35%] z-20 shadow-lg shadow-yellow/90'></div>
       <div className='w-1/4 h-3 -top-1.5 left-[35%] z-10 bg-yellow [clip-path:polygon(100%_100%,0%_100%,10%_0%,90%_0%)] absolute'></div>
       <div className='w-10 bg-zinc-950 bg-[linear-gradient(rgba(45,212,191,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(45,212,191,0.15)_1px,transparent_1px)] bg-size-[28px_28px] h-1/2 -bottom-0.5 -left-0.5 z-100 absolute border-t-2 border-r-2 border-yellow bg-fixed'>
-        {STEPS.map((_, idx) => {
-          return (
-            <div
-              key={idx}
-              className='w-11/12 h-2.5 bg-yellow my-1.5 shadow-lg shadow-yellow/70'
-            ></div>
-          );
-        })}
+        {STEPS.map((_, idx) => (
+          <div
+            key={idx}
+            className='w-11/12 h-2.5 bg-yellow my-1.5 shadow-lg shadow-yellow/70'
+          ></div>
+        ))}
       </div>
       <div className='absolute w-7 h-7 shadow-xl shadow-yellow right-0 bottom-4'></div>
       <div

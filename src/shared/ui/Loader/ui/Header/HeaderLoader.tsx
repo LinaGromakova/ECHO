@@ -18,9 +18,10 @@ export const HeaderLoader = ({
             <p className='-mt-1.5 font-orbitron pl-3'>01</p>
           </div>
         </div>
-        <ArrowIcon></ArrowIcon>
+
         <div>
           <div className='w-56 h-px bg-mint/70'></div>
+          <ArrowIcon></ArrowIcon>
         </div>
         <div className='flex'>
           <div className='w-12 h-px bg-mint/50 mr-7'></div>

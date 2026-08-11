@@ -1,7 +1,6 @@
 import { Radar } from './Radar/Radar';
-
+const ARROWS = Array(8).fill(1);
 export const FooterLoader = () => {
-  const ARROWS = Array(8).fill(1);
   return (
     <footer className='flex justify-between mb-6 relative'>
       <div className='flex items-center'>
@@ -19,16 +18,14 @@ export const FooterLoader = () => {
             </div>
           </div>
           <div className='flex my-5 text-yellow'>
-            {ARROWS.map((_, idx) => {
-              return (
-                <div
-                  key={idx}
-                  className='text-6xl -mr-2 font-extrabold last:-mr-30 last:text-shadow-md last:text-shadow-yellow last:px-12'
-                >
-                  {'>'}
-                </div>
-              );
-            })}
+            {ARROWS.map((_, idx) => (
+              <div
+                key={idx}
+                className='text-6xl -mr-2 font-extrabold last:-mr-30 last:text-shadow-md last:text-shadow-yellow last:px-12'
+              >
+                {'>'}
+              </div>
+            ))}
           </div>
           <div className='flex items-center mt-4'>
             <p className='text-lg tracking-wide'>SYSTEM ONLINE</p>
