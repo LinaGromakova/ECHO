@@ -4,7 +4,7 @@ const STEPS = Array(5).fill(1);
 export const MatrixWindow = () => {
   return (
     <div
-      className='bg-black w-1/5 h-55 absolute 
+      className='bg-black w-1/5 h-55 absolute animate-window-matrix
       shadow-[0_0_15px_rgba(var(--mint-rgb),0.3)]
       z-5 top-[38%] right-1/4  outline-yellow outline-2'
     >

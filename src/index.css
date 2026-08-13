@@ -6,6 +6,9 @@
   --font-orbitron: 'Orbitron', sans-serif;
   --color-yellow: #ffd300;
 }
+body {
+  background: #000000;
+}
 .cyber-grid-container {
   background-color: #09090b;
   background-image:

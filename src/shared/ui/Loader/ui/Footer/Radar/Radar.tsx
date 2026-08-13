@@ -4,14 +4,14 @@ import { CIRCLES } from './constants/circles';
 
 export const Radar = () => {
   return (
-    <div className='w-42 h-42 mb-7.5 border outline-dashed border-mint/50 rounded-full outline-3 outline-offset-30 bg-mint/10 outline-mint/50 relative flex justify-center items-center'>
+    <div className='w-42 h-42 mb-7.5 border outline-dashed border-mint/50 rounded-full outline-3 outline-offset-30 bg-mint/10 outline-mint/50 relative flex justify-center items-center animate-radar'>
       <div className='absolute h-px w-[140%] bg-mint/50'></div>
       <div className='absolute h-px w-[140%] bg-mint/50 rotate-90 top-1/2'></div>
       {TARGETS.map((target, idx) => (
         <div
           key={idx}
           className={clsx(
-            'w-1 h-1 absolute rounded-full  bg-mint shadow-mint shadow-xs',
+            'w-1 h-1 absolute rounded-full  bg-mint shadow-mint shadow-xs animate-ping outline-1 outline-offset-4 outline-mint/20',
             target,
           )}
         ></div>

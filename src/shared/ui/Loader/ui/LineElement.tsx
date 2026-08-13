@@ -1,7 +1,19 @@
 import clsx from 'clsx';
 
-export const LineElement = ({ className }: { className: string }) => {
+export const LineElement = ({
+  className,
+  style,
+}: {
+  className: string;
+  style?: React.CSSProperties;
+}) => {
   return (
-    <div className={clsx('absolute bg-mint shadow-mint', className)}></div>
+    <div
+      style={style}
+      className={clsx(
+        'absolute bg-mint shadow-mint',
+        className,
+      )}
+    ></div>
   );
 };
