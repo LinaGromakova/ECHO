@@ -11,7 +11,7 @@ import { HeaderLoader } from './ui/Header/HeaderLoader';
 import { StatusBlock } from './ui/StatusBlock/StatusBlock';
 import { DECORATION_LINES, DECORATION_TEXT } from './constants/decoration';
 import './styles/loader-animation.css';
-export const Loader = ({ userName }: { userName?: string }) => {
+const Loader = ({ userName }: { userName?: string }) => {
   return (
     <div className='w-full animate-loader-show flex flex-col justify-center h-dvh cyber-grid-container container-shadow fixed text-mint px-20 py-10 font-michroma'>
       {DECORATION_LINES.map((line, idx) => (
@@ -42,3 +42,4 @@ export const Loader = ({ userName }: { userName?: string }) => {
     </div>
   );
 };
+export default Loader;
