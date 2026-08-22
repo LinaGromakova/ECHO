@@ -30,7 +30,7 @@ export const MatrixWindow = () => {
         [clip-path:polygon(0%_0%,0%_100%,100%_100%)] -bottom-1 left-8.75 before:block before:absolute before:w-0.5 before:h-[120%] before:-rotate-45 before:bg-yellow before:-top-0.5 before:right-3.75 before:z-120 bg-fixed'
       ></div>
       <div
-        className='absolute z-100 w-7 h-7 bg-yellow filter
+        className='absolute z-100 w-7 h-7 bg-yellow filter [clip-path:polygon(0%_100%,100%_0%,100%_100%)]
          right-1 bottom-1'
       ></div>
       <MatrixRain
