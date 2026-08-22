@@ -1,25 +1,14 @@
+import { getUserProfile } from '@/entities/user';
 import { supabase } from '@/shared/lib';
 
-export default async function signIn(inputData) {
+export default async function signIn(inputData: {
+  email: string;
+  password: string;
+}) {
   const { email, password } = inputData;
   const { data: authData, error } = await supabase.auth.signInWithPassword({
     email: email,
     password: password,
   });
-  if (error || !authData?.user) {
-    return { data: null, error: error || new Error('Ошибка регистрации') };
-  }
-
-  const { data: profileData, error: profileError } = await supabase
-    .from('profiles')
-    .select('*')
-    .eq('id', authData.user.id)
-    .single();
-  return {
-    data: {
-      ...authData,
-      profile: profileData,
-    },
-    error: profileError,
-  };
+  return getUserProfile(authData, error);
 }

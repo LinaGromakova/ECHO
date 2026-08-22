@@ -23,7 +23,7 @@ const useAuthInit = () => {
     return () => {
       subscription.subscription.unsubscribe();
     };
-  }, []);
+  }, [setUser]);
   return { isAuth, isLoading };
 };
 

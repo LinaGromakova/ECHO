@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import type { ChangeEvent } from 'react';
 interface InputMainProps {
-  type: 'text' | 'password' | 'email';
+  type: string;
   className?: string;
   name: string;
   value: string;
