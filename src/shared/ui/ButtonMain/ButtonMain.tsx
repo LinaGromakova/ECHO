@@ -15,7 +15,7 @@ const ButtonMain = ({
   return (
     <button
       type={type}
-      className={clsx('cursor-pointer bg-mint/80 px-4 py-1', className)}
+      className={clsx('cursor-pointer bg-mint/80 px-4 py-1 block', className)}
       onClick={() => onClickHandler()}
     >
       {text}

@@ -6,11 +6,14 @@ import { useEffect } from 'react';
 const ChatList = () => {
   const setChats = useSetAtom(chatsAtom);
   const CHATS = useAtomValue(chatsAtom);
-  const chats = getChats();
-  console.log(chats);
   useEffect(() => {
+    const chats = async () => {
+      const data = await getChats();
+      return data;
+    };
     setChats(chats);
-  }, [chats]);
+  }, []);
+  console.log(CHATS);
   return (
     <div>
       hello

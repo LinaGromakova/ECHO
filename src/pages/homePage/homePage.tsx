@@ -1,18 +1,22 @@
 import { ChatList } from '@/entities/chats';
 import { signOut } from '@/features';
-import FormNewChat from '@/features/createNewChat/ui/formNewChat';
 import { ButtonMain } from '@/shared/ui';
+import { useNavigate } from 'react-router';
 
 const HomePage = () => {
+  const navigate = useNavigate();
   return (
-    <>
-      {/* <ChatList></ChatList> */}
+    <div>
       <ButtonMain
         onClickHandler={() => signOut()}
         text='logout'
       ></ButtonMain>
-      {/* <FormNewChat></FormNewChat> */}
-    </>
+      <ChatList></ChatList>
+      <ButtonMain
+        onClickHandler={() => navigate('/search')}
+        text='Create new Chat'
+      ></ButtonMain>
+    </div>
   );
 };
 export default HomePage;

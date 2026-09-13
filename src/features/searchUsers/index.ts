@@ -1,1 +1,1 @@
-export { default } from './fetchSearchUsers';
+export { default } from './hooks/useUsersSearch';

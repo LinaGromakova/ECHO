@@ -1,1 +1,1 @@
-export { default } from './createNewChat';
+export { default } from './ui/createChatButton';

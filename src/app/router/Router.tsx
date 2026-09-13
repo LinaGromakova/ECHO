@@ -1,4 +1,4 @@
-import { AuthPage, HomePage, SignUpPage } from '@/pages';
+import { AuthPage, HomePage, SearchPage, SignUpPage } from '@/pages';
 import { SignInPage } from '@/pages/signIn';
 import { createBrowserRouter } from 'react-router';
 import Layout from '../layouts/Layout';
@@ -20,6 +20,7 @@ const router = createBrowserRouter([
           { path: 'register', Component: SignUpPage },
         ],
       },
+      { path: 'search', Component: SearchPage },
     ],
   },
 ]);
