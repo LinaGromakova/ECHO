@@ -3,7 +3,10 @@ import { Navigate, Outlet, useLocation } from 'react-router';
 
 const Layout = () => {
   const location = useLocation();
-  const { isAuth } = useAuthInit();
+  const { isAuth, isLoading } = useAuthInit();
+  if (isLoading) {
+    return <div>loading...</div>;
+  }
   if (!isAuth && !location.pathname.startsWith('/auth')) {
     return (
       <Navigate

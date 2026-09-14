@@ -1,12 +1,10 @@
-import { signOut } from '@/features';
-import { ButtonMain } from '@/shared/ui';
+import { SidebarChat } from '@/widgets';
 
 const HomePage = () => {
   return (
-    <ButtonMain
-      onClickHandler={() => signOut()}
-      text='logout'
-    ></ButtonMain>
+    <div>
+      <SidebarChat></SidebarChat>
+    </div>
   );
 };
 export default HomePage;

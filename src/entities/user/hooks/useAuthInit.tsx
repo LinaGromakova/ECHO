@@ -12,9 +12,11 @@ const useAuthInit = () => {
       (_event, session) => {
         if (session?.user.id) {
           setIsAuth(true);
+          setIsLoading(false);
           return;
         } else {
           setUser(null);
+          setIsLoading(false);
           setIsAuth(false);
         }
         setIsLoading(false);
