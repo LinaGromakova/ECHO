@@ -1,15 +1,17 @@
 import type { ChatInterface } from '@/shared/types';
-import { useNavigate } from 'react-router';
 
-const ChatItem = ({ chat }: { chat: ChatInterface }) => {
-  const navigate = useNavigate();
+const ChatItem = ({
+  chat,
+  handlerClick,
+}: {
+  chat: ChatInterface;
+  handlerClick: () => void;
+}) => {
   return (
     <div
       className='p-5 w-full h-12 flex bg-amber-300 items-center cursor-pointer justify-between'
       key={chat.chatId}
-      onClick={() => {
-        navigate(`/chat/${chat.chatId}`);
-      }}
+      onClick={() => handlerClick()}
     >
       <div className='flex'>
         <div className='w-10 h-10 rounded-full bg-black mr-4'>

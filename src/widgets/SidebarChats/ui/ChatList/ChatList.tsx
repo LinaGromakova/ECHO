@@ -1,13 +1,16 @@
 import { useAtomValue, useSetAtom } from 'jotai';
-import getChats from '../api';
-import chatsAtom from '../model';
 import { useEffect } from 'react';
 import type { ChatInterface } from '@/shared/types';
-import ChatItem from './ChatItem';
+import { ChatItem, chatsAtom } from '@/entities/chats';
+import getChats from '@/entities/chats/api';
+import { useNavigate } from 'react-router';
+import { targetUserAtom } from '@/entities/targetUser';
 
 const ChatList = () => {
   const setChats = useSetAtom(chatsAtom);
+  const setTargetUser = useSetAtom(targetUserAtom);
   const CHATS = useAtomValue(chatsAtom);
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchChats = async () => {
       try {
@@ -20,12 +23,23 @@ const ChatList = () => {
     fetchChats();
   }, [setChats]);
   return (
-    <div className='w-1/5 relative'>
+    <div className='w-full relative'>
       {CHATS.map((chat: ChatInterface) => {
         return (
           <ChatItem
             key={chat.chatId}
             chat={chat}
+            handlerClick={() => {
+              if (chat) {
+                navigate(`/chat/${chat.chatId}`);
+                setTargetUser({
+                  onlineStatus: false,
+                  isTyping: false,
+                  username: chat.interlocutorName,
+                  userAvatar: chat.interlocutorAvatar ?? '',
+                });
+              }
+            }}
           ></ChatItem>
         );
       })}
