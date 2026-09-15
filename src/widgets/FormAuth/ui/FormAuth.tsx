@@ -4,10 +4,14 @@ import { ButtonMain, HeadingMain, InputMain } from '@/shared/ui';
 import { useSetAtom } from 'jotai';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import updateInputForm from './model/updateInputForm';
-import handlerSubmitForm from './model/handlerSubmitForm';
-import { INPUTS_SIGN_IN, INPUTS_SIGN_UP } from './ui/FormAuth.config';
-import type { AuthFormData, InputConfig } from './ui/FormAuth.config';
+import {
+  INPUTS_SIGN_IN,
+  INPUTS_SIGN_UP,
+  type AuthFormData,
+} from './FormAuth.config';
+import type { InputConfig } from './FormAuth.config';
+import updateInputForm from '../model/updateInputForm';
+import handlerSubmitForm from '../model/handlerSubmitForm';
 
 const FormAuth = ({
   title,
